@@ -60,15 +60,14 @@ button.login {
 
 .wrapper {
     display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-    height: 100vh; /* Set the height to the viewport height */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* Center the left image */
 .left-image img {
     display: block;
-    margin: 0 auto; /* Center horizontally */
+    margin: 0 auto;
 }
 
 .box {
@@ -141,4 +140,26 @@ button.login {
 #microsoft{
     background-color: mediumpurple;
     border-radius: 0;
+}
+
+.footer {
+    width: 70%;
+    margin: auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #737373;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 13px;
+}
+.footer a{
+    margin-right: 20px;
+    color: #737373;
+    text-decoration: none;
+}
+
+.footer a:hover{
+    text-decoration: underline;
 }
