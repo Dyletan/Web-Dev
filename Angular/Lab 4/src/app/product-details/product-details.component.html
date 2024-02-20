@@ -1,0 +1,9 @@
+<div *ngIf="product" class="details">
+  <h1 style=" font-size: 42px">Product Details</h1>
+  <h3>{{ getProduct().name }}</h3>
+  <img [src]="getProduct().image">
+  <h4>Price: {{ getProduct().price | currency:'KZT' }}</h4>
+  <span style="margin-right: 10px">Rating: {{ getProduct().rating }}/5</span>
+  <a [href]="getProduct().kaspi_link">Buy here</a>
+  <p style="font-size: 20px">{{ getProduct().description }}</p>
+</div>

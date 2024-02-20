@@ -1,0 +1,30 @@
+<h1 style="text-align: center; padding-top: 5px; font-size: 42px">Products</h1>
+
+<div class="container">
+  <div *ngFor="let product of products" class="product">
+
+    <h3>
+      <a [title]="product.name + ' details'"
+         [routerLink]="['/products', product.id]">
+        <p>{{ product.name }}</p>
+        <img [src]="product.image" [alt]="product.name + ' image'"
+             style="display: block; margin: 0 auto">
+      </a>
+    </h3>
+
+    <p *ngIf="product.description">
+      Description: {{ product.description }}
+    </p>
+
+    <button type="button" (click)="share(product.id)">
+      Share
+    </button>
+
+  </div>
+</div>
+
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
