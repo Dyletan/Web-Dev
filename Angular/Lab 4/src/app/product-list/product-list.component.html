@@ -1,21 +1,26 @@
 <h1 style="text-align: center; padding-top: 5px; font-size: 42px">Products</h1>
 
 <div class="container">
-  <div *ngFor="let product of products" class="product">
+  <div *ngFor="let product of products_by_category" class="product">
+    <div style="display: flex">
+      <button class="cross-button" (click)="deleteProduct(product)">X</button>
+    </div>
 
-    <h3>
-      <a [title]="product.name + ' details'"
-         [routerLink]="['/products', product.id]">
-        <p>{{ product.name }}</p>
-        <img [src]="product.image" [alt]="product.name + ' image'"
-             style="display: block; margin: 0 auto">
-      </a>
-    </h3>
+    <a [title]="product.name + ' details'"
+       [routerLink]="['/products', product.id]">
+      <p style="font-weight: bolder">{{ product.name }}</p>
+      <img [src]="product.image" [alt]="product.name + ' image'"
+           style="display: block; margin: 0 auto">
+    </a>
+
 
     <p *ngIf="product.description">
       Description: {{ product.description }}
     </p>
-
+    <div style="margin-bottom: 10px">
+      <span style="color: darkgreen; margin-right: 10px; font-weight: bold">Likes: {{ product.likes }}</span>
+      <button (click)="likeProduct(product)">Like</button>
+    </div>
     <button type="button" (click)="share(product.id)">
       Share
     </button>
@@ -23,8 +28,3 @@
   </div>
 </div>
 
-<!--
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->

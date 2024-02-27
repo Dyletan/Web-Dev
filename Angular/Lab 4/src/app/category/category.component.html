@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 style="text-align: center; padding-top: 5px; font-size: 42px">Products</h1>
+
+  <div class="container">
+    <div *ngFor="let category of categories" class="product">
+
+      <h3>
+        <a [title]="category.name + ' details'"
+           [routerLink]="['/category', category.name]">
+          <p>{{ category.name }}</p>
+          <img [src]="category.image" [alt]="category.name + ' image'"
+               style="display: block; margin: 0 auto">
+        </a>
+      </h3>
+    </div>
+  </div>
+
+
+</div>
+
+<!--
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->

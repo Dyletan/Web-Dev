@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailsComponent } from "./product-details/product-details.component";
-
+import {CategoryComponent} from "./category/category.component";
 
 @NgModule({
   bootstrap: [
@@ -18,12 +18,14 @@ import { ProductDetailsComponent } from "./product-details/product-details.compo
     TopBarComponent,
     ProductListComponent,
     ProductDetailsComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: '', component: ProductListComponent},
+      {path: '', component: CategoryComponent},
+      {path: 'category/:categoryName', component: ProductListComponent},
       {path: 'products/:productId', component: ProductDetailsComponent},
     ]),
   ]
