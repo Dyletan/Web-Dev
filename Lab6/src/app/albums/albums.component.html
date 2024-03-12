@@ -1,0 +1,9 @@
+<h1>Albums</h1>
+<div *ngIf="albums.length > 0">
+  <div *ngFor="let album of albums" class="album-item">
+    <h2 [routerLink]="['/albums', album.id]">{{ album.title }}</h2>
+    <button (click)="deleteAlbum(album.id)">delete</button>
+  </div>
+</div>
+
+

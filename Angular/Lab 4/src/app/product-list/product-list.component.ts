@@ -33,8 +33,7 @@ export class ProductListComponent implements OnInit{
   }
 
   deleteProduct(product: Product): void {
-    // @ts-ignore
-    const index = this.products_by_category.indexOf(product);
+    const index = this.products_by_category?.indexOf(product);
     if (index > -1) {
       // @ts-ignore
       this.products_by_category.splice(index, 1);
