@@ -27,7 +27,7 @@ export class AlbumDetailComponent implements OnInit {
   }
 
   updateAlbum(): void {
-    if (this.album) {
+    if (this.album && this.title) {
       this.albumsService.updateAlbum(this.album.id, this.title).subscribe(
         updatedAlbum => {
           this.album = updatedAlbum;
